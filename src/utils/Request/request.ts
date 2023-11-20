@@ -34,13 +34,13 @@ export default class Axios {
 		}
 		if(error?.response) {
 			if(error.response.status === 403) {
-				console.error('拒绝访问');
+				console.error('403 拒绝访问');
 			} else if(error.response.status === 404) {
-				console.error('不存在该资源');
+				console.error('404 不存在该资源');
 			} else if(error.response.status === 500) {
-				console.error('服务器端错误');
+				console.error('500 服务器端错误');
 			} else if(error.response.status === 502) {
-				console.error('网络错误');
+				console.error('502 网络错误');
 			}
 		}
 		return Promise.reject(error)

@@ -1,5 +1,5 @@
 {
-  "name": "hkmo-area",
+  "name": "reactinit",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,7 +45,6 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "@types/node": "^20.8.9",
     "craco-less": "^3.0.1",
     "less": "^4.2.0"
   }

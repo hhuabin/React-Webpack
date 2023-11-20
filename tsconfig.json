@@ -27,6 +27,6 @@
 	}
   },
   "include": [
-    "src"
-, "craco-less.d.ts"  ]
+	"src"
+  ]
 }

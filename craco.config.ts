@@ -1,3 +1,5 @@
+declare const __dirname: string;
+
 const CracoLessPlugin = require('craco-less');
 import { resolve } from 'path'
 

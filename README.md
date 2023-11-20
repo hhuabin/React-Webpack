@@ -50,8 +50,3 @@
    yarn run build
    ```
 
-
-
-## tips
-
-`devDependencies` 下的 `@babel/plugin-proposal-private-property-in-object` 包并非一定要，请根据需要下载或者卸载，其本身只是解决yarn的一个警告才引入的。

@@ -5,13 +5,14 @@ import "./App.less"
 
 function App() {
 
+	// 做登录缓存，可根据需要删除重写
 	const dispatch = useDispatch()
 	dispatch(saveToken({
 		token: "token"
 	}))
 
 	return (
-		<div className="app">
+		<div id="app">
 			{ RenderRoutes() }
 		</div>
 	);
