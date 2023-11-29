@@ -28,25 +28,25 @@
 
 1. first
 
-   ```shell
+   ```bash
    git clone
    ```
 
 2. second
 
-   ```shell
+   ```bash
    yarn install
    ```
 
-3. three
+3. third
 
-   ```shell
+   ```bash
    yarn start
    ```
 
 4. four
 
-   ```shell
+   ```bash
    yarn run build
    ```
 

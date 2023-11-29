@@ -23,7 +23,9 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "build:dev": "dotenv -e .env.development craco build",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +48,7 @@
   "devDependencies": {
     "@craco/craco": "^7.1.0",
     "craco-less": "^3.0.1",
+    "dotenv-cli": "^7.3.0",
     "less": "^4.2.0"
   }
 }

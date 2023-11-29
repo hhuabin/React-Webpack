@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 import { saveToken } from '@/store/slice/userSlice'
 import RenderRoutes from "@/router/RenderRoutes"
@@ -10,6 +11,10 @@ function App() {
 	dispatch(saveToken({
 		token: "token"
 	}))
+
+	useEffect(() =>{
+		console.log("App process", process.env);
+	})
 
 	return (
 		<div id="app">
