@@ -22,6 +22,11 @@
 
 6. axios
 
+7. tailwind
+
+   样式组件
+
+   
 
 
 ## Use
@@ -50,3 +55,6 @@
    yarn run build
    ```
 
+# version
+node: v18.16.0
+yarn: 1.22.19
