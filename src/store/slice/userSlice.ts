@@ -1,5 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import CookieUtil from '@/utils/StorageUtils/CookieUtil'
+
+import type { Token } from "../sliceType/userActionType"
 
 export const userSlice = createSlice({
 	// 用来自动生成 action 中的 type
@@ -8,7 +10,7 @@ export const userSlice = createSlice({
 		token: CookieUtil.get("token") || "",
 	},
 	reducers: {
-		saveToken: (state, action) => {
+		saveToken: (state, action: PayloadAction<Token>) => {
 			state.token = action.payload.token
 			CookieUtil.set({
 				name: "token",
@@ -18,7 +20,7 @@ export const userSlice = createSlice({
 		},
 		removeToken: (state) => {
 			state.token = ""
-			CookieUtil.unset({ name: "token"})
+			CookieUtil.unset({ name: "token" })
 		},
 	},
 })

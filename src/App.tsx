@@ -4,7 +4,7 @@ import { saveToken } from '@/store/slice/userSlice'
 import RenderRoutes from "@/router/RenderRoutes"
 import "./App.less"
 
-function App() {
+const App: React.FC = () => {
 
 	// 做登录缓存，可根据需要删除重写
 	const dispatch = useDispatch()
@@ -12,13 +12,13 @@ function App() {
 		token: "token"
 	}))
 
-	useEffect(() =>{
+	useEffect(() => {
 		console.log("App process", process.env);
 	})
 
 	return (
 		<div id="app">
-			{ RenderRoutes() }
+			<RenderRoutes></RenderRoutes>
 		</div>
 	);
 }

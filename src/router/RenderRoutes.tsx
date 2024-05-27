@@ -4,16 +4,15 @@ import { Routes, Route } from 'react-router-dom'
 import { routes } from "./routerConfig"
 import type { RouteRecordRaw } from "./routerConfig"
 import GuardedRoute from "./RouteGuard"
-import Loading from "@/pages/Loading/Loading";
+import Loading from "@/components/Loading/Loading";
 
-const RenderRoutes = () => {
+const RenderRoutes: React.FC = () => {
 
 	const createRoutes = (routes: Array<RouteRecordRaw>) => {
 		return routes.map((item) => {
 			return (
 				<Route path={item.path} element={
-					<GuardedRoute router={item}>
-					</GuardedRoute>
+					<GuardedRoute router={item}></GuardedRoute>
 				} key={item.path}>
 					{item?.children && createRoutes(item.children)}
 				</Route>
@@ -22,7 +21,7 @@ const RenderRoutes = () => {
 	}
 
 	return (
-		<Suspense fallback={<Loading/>}>
+		<Suspense fallback={<Loading />}>
 			<Routes>
 				{createRoutes(routes)}
 			</Routes>

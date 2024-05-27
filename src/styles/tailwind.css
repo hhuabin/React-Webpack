@@ -1,3 +1,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* 兼容antd */
+@layer base {
+	svg {
+		display: inline;
+		vertical-align: baseline;
+	}
+}

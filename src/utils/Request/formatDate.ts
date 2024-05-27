@@ -14,7 +14,7 @@ const formatDate = (value: string | Date | number, fmt: string): string => {
 
 	fmt = fmt || "YYYY/MM/DD hh:mm:ss";
 	const weekList = ['日', '一', '二', '三', '四', '五', '六'];
-	const fmtobj: Record<string, number|string> = {
+	const fmtobj: Record<string, number | string> = {
 		'M+': date.getMonth() + 1,
 		'D+': date.getDate(),
 		'h+': date.getHours(),

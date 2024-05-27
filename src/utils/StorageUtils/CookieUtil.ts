@@ -8,11 +8,11 @@ export default class CookieUtil {
 	public static get = (name: string): string | null => {
 		const cookieName = `${encodeURIComponent(name)}=`,
 			cookieStart = document.cookie.indexOf(cookieName);
-		let	cookieValue = null;
-		
-		if(cookieStart > -1) {
+		let cookieValue = null;
+
+		if (cookieStart > -1) {
 			let cookieEnd = document.cookie.indexOf(";", cookieStart)
-			if(cookieEnd === -1) {
+			if (cookieEnd === -1) {
 				cookieEnd = document.cookie.length
 			}
 			cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd))
@@ -28,7 +28,7 @@ export default class CookieUtil {
 	public static getAll = (): Record<string, string> => {
 		const result: Record<string, string> = {}
 		const cookie = document.cookie
-		if(cookie.length < 1) return result
+		if (cookie.length < 1) return result
 
 		const cookieArray = cookie.split("; ")
 		for (const element of cookieArray) {
@@ -59,24 +59,24 @@ export default class CookieUtil {
 	 * @param params[domain] 域
 	 * @param params[secure] 安全标志
 	 */
-	public static set = (params: {name: string, value: string, expires?: Date | number, path?: string, domain?: string, secure?: boolean}) => {
-		const {name, value, expires, path, domain, secure = false} = params
+	public static set = (params: { name: string, value: string, expires?: Date | number, path?: string, domain?: string, secure?: boolean }) => {
+		const { name, value, expires, path, domain, secure = false } = params
 
 		let cookieText = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`
 
-		if(expires) {
-			if(typeof expires === "number") {
+		if (expires) {
+			if (typeof expires === "number") {
 				cookieText += `; expires=${new Date(expires).toUTCString()}`
 			} else {
 				cookieText += `; expires=${(expires as Date).toUTCString()}`
 			}
 		}
 
-		if(path) cookieText += `; path=${path}`
+		if (path) cookieText += `; path=${path}`
 
-		if(domain) cookieText += `; domain=${domain}`
+		if (domain) cookieText += `; domain=${domain}`
 
-		if(secure) cookieText += `; secure`
+		if (secure) cookieText += `; secure`
 
 		document.cookie = cookieText
 	}
@@ -85,7 +85,7 @@ export default class CookieUtil {
 	 * 删除单个 cookie
 	 * @param params 
 	 */
-	public static unset = (params: {name: string, path?: string, domain?: string, secure?: boolean}) => {
+	public static unset = (params: { name: string, path?: string, domain?: string, secure?: boolean }) => {
 		CookieUtil.set({
 			...params,
 			value: "",

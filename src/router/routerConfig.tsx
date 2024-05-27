@@ -18,7 +18,7 @@ export const routes: Array<RouteRecordRaw> = [
 	{
 		path: '/',
 		name: "home",
-		element: <Home/>,
+		element: <Home />,
 		// element: (<><Home/><Navigate to="/home/:id" replace/></>),
 		meta: {
 			needAuth: false,
@@ -27,7 +27,7 @@ export const routes: Array<RouteRecordRaw> = [
 	{
 		path: '*',
 		name: "notfound",
-		element: <NotFound/>,
+		element: <NotFound />,
 		meta: {
 			title: "notfound",
 			needAuth: false,
